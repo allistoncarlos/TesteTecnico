@@ -69,7 +69,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         view.interactor = interactor
         interactor.presenter = presenter
-        presenter.view = view
+        presenter.cardsView = view
 
         return view
     }

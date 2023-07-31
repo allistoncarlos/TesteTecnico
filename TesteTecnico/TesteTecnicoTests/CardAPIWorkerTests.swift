@@ -33,10 +33,10 @@ final class CardAPIWorkerTests: XCTestCase {
         stubGetCards()
 
         // Act
-        let result = await sut.fetch()
+        let result = await sut.fetchCards()
 
         // Assert
-        XCTAssertEqual(result.count, 4)
+        XCTAssertEqual(result?.fullSets.count, 4)
     }
 
     // MARK: Private
@@ -53,7 +53,7 @@ extension CardAPIWorkerTests {
             jsonObject: fakeJSONResponse,
             header: nil,
             statusCode: 200,
-            absoluteStringWord: "omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks"
+            absoluteStringWord: "omgvamp-hearthstone-v1.p.rapidapi.com/cards"
         )
     }
 }

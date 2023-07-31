@@ -10,7 +10,7 @@ import OHHTTPStubsSwift
 
 final class StubRequests {
     func stubJSONResponse(
-        jsonObject: [Any],
+        jsonObject: [String: Any],
         header: [String: String]?,
         statusCode: Int32,
         absoluteStringWord: String,

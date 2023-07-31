@@ -11,33 +11,26 @@ import Foundation
 
 protocol CardPresenterLogic: AnyObject {
     func fetch(_ response: CardModels.Fetch.Response)
+    func fetchDetail(_ response: CardModels.FetchDetail.Response)
 }
 
 // MARK: - CardPresenter
 
 class CardPresenter: CardPresenterLogic {
-    var view: CardsViewLogic?
+    var cardsView: CardsViewLogic?
+    var cardDetailView: CardDetailViewLogic?
 
     func fetch(_ response: CardModels.Fetch.Response) {
-        let cards = response.cards.map { card in
-            CardAPIModel(
-                id: card.id,
-                name: card.name,
-                description: card.description,
-                source: card.source,
-                enabled: card.enabled,
-                img: card.img,
-                imgAnimated: card.imgAnimated,
-                sortCategory: card.sortCategory,
-                sortOrder: card.sortOrder,
-                locale: card.locale
-            )
+        if let cards = response.cards {
+            let viewModel = CardModels.Fetch.ViewModel()
+            viewModel.cards = cards.fullSets
+            cardsView?.fetch(viewModel)
         }
+    }
 
-        let viewModel = CardModels.Fetch.ViewModel()
-        viewModel.cards = cards.sorted { card1, card2 in
-            card1.sortOrder < card2.sortOrder
-        }
-        view?.fetch(viewModel)
+    func fetchDetail(_ response: CardModels.FetchDetail.Response) {
+        let viewModel = CardModels.FetchDetail.ViewModel()
+        viewModel.card = response.card
+        cardDetailView?.fetch(viewModel)
     }
 }

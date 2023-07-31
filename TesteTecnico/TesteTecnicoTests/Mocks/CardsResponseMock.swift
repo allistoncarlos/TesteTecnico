@@ -8,54 +8,107 @@
 import Foundation
 
 final class CardsResponseMock {
-    let successResponse: [Any] = [
-        [
-            "cardBackId": 0,
-            "name": "Classic",
-            "description": "The only card back you'll ever need.",
-            "source": "0",
-            "enabled": true,
-            "img": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/556d677acbb31fececd42912cf003aabeb3bb6efb571bb43de83e6b763763f2c.png",
-            "imgAnimated": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/556d677acbb31fececd42912cf003aabeb3bb6efb571bb43de83e6b763763f2c.png",
-            "sortCategory": 1,
-            "sortOrder": 1,
-            "locale": "enUS"
-        ] as [String: Any],
-        [
-            "cardBackId": 177,
-            "name": "Darkmoon Faire",
-            "description": "Come for the questionable carnival games, stay for the deep fried candybars!\n\nAcquired by winning 5 games in ranked mode, October 2019.",
-            "source": "1",
-            "enabled": true,
-            "img": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/b8036b9bac29f2ba6d034164147782a2a1c69e3c47f35bc30c7283a7e95c2fdc.png",
-            "imgAnimated": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/b8036b9bac29f2ba6d034164147782a2a1c69e3c47f35bc30c7283a7e95c2fdc.png",
-            "sortCategory": 5,
-            "sortOrder": 0,
-            "locale": "enUS"
-        ] as [String: Any],
-        [
-            "cardBackId": 21,
-            "name": "Nefarian",
-            "description": "You didn't actually believe someone named \"Lord Victor Nefarious\" wasn't up to anything nefarious, did you?\n\nAcquired from completing Blackrock Mountain in Heroic mode.",
-            "source": "4",
-            "enabled": true,
-            "img": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/ca7ded9b3af3a3dd61f8946d7f9479ca290578da44949c3c013ff73fa9832c4e.png",
-            "imgAnimated": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/ca7ded9b3af3a3dd61f8946d7f9479ca290578da44949c3c013ff73fa9832c4e.png",
-            "sortCategory": 3,
-            "sortOrder": 2,
-            "locale": "enUS"
-        ] as [String: Any],
-        [
-            "cardBackId": 44,
-            "name": "Overwatch",
-            "description": "The cavalry's here!\n\nObtained by participating in an Overwatch event or purchasing in the shop.",
-            "source": "2",
-            "enabled": true,
-            "img": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/07858d1eb395c8ee745d07dabab42cfca6bdda6fcd40b08a0f453146d402c111.png",
-            "imgAnimated": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/07858d1eb395c8ee745d07dabab42cfca6bdda6fcd40b08a0f453146d402c111.png",
-            "sortCategory": 8,
-            "sortOrder": 4,
-            "locale": "enUS"
-        ] as [String: Any]
+    let successResponse: [String: Any] = [
+        "Basic": [
+            [
+                "cardId": "RLK_Prologue_CS2_092e",
+                "dbfId": 100_672,
+                "name": "Blessing of Kings",
+                "cardSet": "Basic",
+                "type": "Enchantment",
+                "text": "+4/+4.",
+                "playerClass": "Paladin",
+                "locale": "enUS"
+            ],
+            [
+                "cardId": "RLK_Prologue_CS2_087e",
+                "dbfId": 100_661,
+                "name": "Blessing of Might",
+                "cardSet": "Basic",
+                "type": "Enchantment",
+                "faction": "Neutral",
+                "text": "+3 Attack.",
+                "playerClass": "Paladin",
+                "locale": "enUS"
+            ],
+            [
+                "cardId": "RLK_Prologue_BT_035e",
+                "dbfId": 100_824,
+                "name": "Chaos Strike",
+                "cardSet": "Basic",
+                "type": "Enchantment",
+                "text": "+2 Attack this turn.",
+                "playerClass": "Demon Hunter",
+                "locale": "enUS",
+                "mechanics": [
+                    [
+                        "name": "OneTurnEffect"
+                    ]
+                ]
+            ] as [String: Any],
+            [
+                "cardId": "RLK_Prologue_BT_512e",
+                "dbfId": 100_845,
+                "name": "Demon Power",
+                "cardSet": "Basic",
+                "type": "Enchantment",
+                "text": "+8 Attack ",
+                "playerClass": "Demon Hunter",
+                "locale": "enUS",
+                "mechanics": [
+                    [
+                        "name": "OneTurnEffect"
+                    ]
+                ]
+            ]
+        ],
+        "Classic": [] as [Any],
+        "Hall of Fame": [] as [Any],
+        "Missions": [] as [Any],
+        "Demo": [] as [Any],
+        "System": [] as [Any],
+        "Promo": [] as [Any],
+        "Naxxramas": [] as [Any],
+        "Goblins vs Gnomes": [] as [Any],
+        "Blackrock Mountain": [] as [Any],
+        "The Grand Tournament": [] as [Any],
+        "Credits": [] as [Any],
+        "Hero Skins": [] as [Any],
+        "Tavern Brawl": [] as [Any],
+        "The League of Explorers": [] as [Any],
+        "Whispers of the Old Gods": [] as [Any],
+        "One Night in Karazhan": [] as [Any],
+        "Mean Streets of Gadgetzan": [] as [Any],
+        "Journey to Un'Goro": [] as [Any],
+        "Knights of the Frozen Throne": [] as [Any],
+        "Kobolds & Catacombs": [] as [Any],
+        "The Witchwood": [] as [Any],
+        "The Boomsday Project": [] as [Any],
+        "Rastakhan's Rumble": [] as [Any],
+        "Rise of Shadows": [] as [Any],
+        "Taverns of Time": [] as [Any],
+        "Saviors of Uldum": [] as [Any],
+        "Descent of Dragons": [] as [Any],
+        "Galakrond's Awakening": [] as [Any],
+        "Ashes of Outland": [] as [Any],
+        "Wild Event": [] as [Any],
+        "Scholomance Academy": [] as [Any],
+        "Battlegrounds": [] as [Any],
+        "Demon Hunter Initiate": [] as [Any],
+        "Madness At The Darkmoon Faire": [] as [Any],
+        "Forged in the Barrens": [] as [Any],
+        "Legacy": [] as [Any],
+        "Core": [] as [Any],
+        "Vanilla": [] as [Any],
+        "Wailing Caverns": [] as [Any],
+        "United in Stormwind": [] as [Any],
+        "Mercenaries": [] as [Any],
+        "Fractured in Alterac Valley": [] as [Any],
+        "Voyage to the Sunken City": [] as [Any],
+        "Unknown": [] as [Any],
+        "Murder at Castle Nathria": [] as [Any],
+        "March of the Lich King": [] as [Any],
+        "Path of Arthas": [] as [Any],
+        "Festival of Legends": [] as [Any]
     ]
 }
