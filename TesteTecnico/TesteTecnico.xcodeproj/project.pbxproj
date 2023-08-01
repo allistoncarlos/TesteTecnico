@@ -26,6 +26,8 @@
 		A5E9CC372A77EDD100918A7D /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9CC362A77EDD100918A7D /* CardDetailView.swift */; };
 		A5E9CC3E2A782C0700918A7D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9CC3D2A782C0700918A7D /* LoadingView.swift */; };
 		A5E9CC402A782E9800918A7D /* CardDetailAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9CC3F2A782E9800918A7D /* CardDetailAPIModel.swift */; };
+		A5E9CC432A7834A300918A7D /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9CC422A7834A300918A7D /* ImageViewModel.swift */; };
+		A5E9CC452A7834B400918A7D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9CC442A7834B400918A7D /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		A5E9CC362A77EDD100918A7D /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		A5E9CC3D2A782C0700918A7D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A5E9CC3F2A782E9800918A7D /* CardDetailAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailAPIModel.swift; sourceTree = "<group>"; };
+		A5E9CC422A7834A300918A7D /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		A5E9CC442A7834B400918A7D /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,11 +198,21 @@
 		A5E9CC352A77EDC500918A7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5E9CC412A78349400918A7D /* ImageView */,
 				A522E79D2A74459A00180C81 /* CardView.swift */,
 				A5E9CC362A77EDD100918A7D /* CardDetailView.swift */,
 				A5E9CC3D2A782C0700918A7D /* LoadingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A5E9CC412A78349400918A7D /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				A5E9CC422A7834A300918A7D /* ImageViewModel.swift */,
+				A5E9CC442A7834B400918A7D /* ImageView.swift */,
+			);
+			path = ImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E9CC452A7834B400918A7D /* ImageView.swift in Sources */,
 				A522E7952A74424B00180C81 /* CardInteractor.swift in Sources */,
 				A522E7972A74428E00180C81 /* CardModels.swift in Sources */,
 				A522E7932A74422200180C81 /* CardAPIWorker.swift in Sources */,
@@ -321,6 +336,7 @@
 				A522E79E2A74459A00180C81 /* CardView.swift in Sources */,
 				A522E79C2A7444FA00180C81 /* CardAPIModel.swift in Sources */,
 				A5E9CC372A77EDD100918A7D /* CardDetailView.swift in Sources */,
+				A5E9CC432A7834A300918A7D /* ImageViewModel.swift in Sources */,
 				A5E9CC402A782E9800918A7D /* CardDetailAPIModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,7 +545,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KB2R5P3BHU;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alliston.TesteTecnicoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -549,7 +565,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KB2R5P3BHU;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alliston.TesteTecnicoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

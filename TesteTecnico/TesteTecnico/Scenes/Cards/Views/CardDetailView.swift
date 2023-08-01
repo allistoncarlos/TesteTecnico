@@ -22,11 +22,72 @@ struct CardDetailView: View {
     var interactor: CardInteractorLogic?
 
     var body: some View {
-        NavigationView {
-            if let card = model.card {
-                Text("\(card.name)")
-                    .navigationBarTitle("\(card.name)", displayMode: .large)
+        ScrollView {
+            VStack {
+                if let card = model.card {
+                    if let imageUrl = card.img {
+                        ImageView(urlString: imageUrl)
+                            .frame(height: 250)
+                    }
+
+                    if let flavor = card.flavor {
+                        Text(flavor)
+                            .font(.subheadline)
+                            .padding(.bottom, 10)
+                    }
+
+                    if let text = card.text {
+                        Text(text)
+                            .font(.subheadline)
+                            .padding(.bottom, 10)
+                    }
+
+                    HStack {
+                        Text("Set: \(card.cardSet)")
+                            .font(.subheadline)
+
+                        Text("Type: \(card.type)")
+                            .font(.subheadline)
+
+                        if let rarity = card.rarity {
+                            Text("Rarity: \(rarity)")
+                                .font(.subheadline)
+                        }
+                    }
+                    .padding(.bottom, 10)
+
+                    if let mechanics = card.mechanics {
+                        Text("Mechanics")
+                            .font(.headline)
+                            .padding(.top, 10)
+
+                        HStack {
+                            ForEach(mechanics, id: \.self) { mechanic in
+                                Text(mechanic.name)
+                                    .font(.subheadline)
+                                    .padding(.bottom, 10)
+                            }
+                        }
+                    }
+
+                    HStack(alignment: .top) {
+                        if let cost = card.cost {
+                            Text("Cost: \(cost)")
+                                .font(.subheadline)
+                                .padding(.bottom, 10)
+                        }
+
+                        if let health = card.health {
+                            Text("Health: \(health)")
+                                .font(.subheadline)
+                        }
+                    }
+
+                    Spacer()
+                }
             }
+            .navigationBarTitle(model.card?.name ?? "")
+            .padding([.leading, .trailing], 10)
         }
         .edgesIgnoringSafeArea(.bottom)
         .onAppear {
@@ -51,6 +112,6 @@ extension CardDetailView: CardDetailViewLogic {
 
 struct CardDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CardDetailView(model: CardModels.FetchDetail.ViewModel(), id: "HERO_11bpt")
+        CardDetailView(model: CardModels.FetchDetail.ViewModel(), id: "YOD_041")
     }
 }
