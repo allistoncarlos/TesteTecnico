@@ -8,7 +8,7 @@
 import Foundation
 
 final class CardsResponseMock {
-    let successResponse: [String: Any] = [
+    let successCardsResponse: [String: Any] = [
         "Basic": [
             [
                 "cardId": "RLK_Prologue_CS2_092e",
@@ -110,5 +110,34 @@ final class CardsResponseMock {
         "March of the Lich King": [] as [Any],
         "Path of Arthas": [] as [Any],
         "Festival of Legends": [] as [Any]
+    ]
+
+    let successCardDetailResponse: [[String: Any]] = [
+        [
+            "cardId": "YOD_041",
+            "dbfId": 56292,
+            "name": "Eye of the Storm",
+            "cardSet": "Galakrond's Awakening",
+            "type": "Spell",
+            "rarity": "Common",
+            "cost": 10,
+            "text": "Summon three 5/6 Elementals with <b>Taunt</b>. <b>Overload:</b> (3)",
+            "flavor": "If that's the eye, I would hate to see the rest of the storm.",
+            "artist": "Evgeniy Dlinnov",
+            "collectible": true,
+            "playerClass": "Shaman",
+            "spellSchool": "Nature",
+            "img": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/e419977f3c5d3470f9d06934d26b5d93d7aa3d5fac8bee9a78ed89663157f1e1.png",
+            "imgGold": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/bf05ace8b85bf91610e4455286120ee83235478a385cbcd48bb6d46a0befba91.png",
+            "locale": "enUS",
+            "mechanics": [
+                [
+                    "name": "Taunt"
+                ],
+                [
+                    "name": "Overload"
+                ]
+            ]
+        ]
     ]
 }

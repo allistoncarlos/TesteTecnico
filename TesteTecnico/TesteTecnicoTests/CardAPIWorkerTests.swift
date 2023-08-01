@@ -39,6 +39,20 @@ final class CardAPIWorkerTests: XCTestCase {
         XCTAssertEqual(result?.fullSets.count, 4)
     }
 
+    func test_CardAPIWorker_WhenLoadCardDetail_ShouldReturn() async {
+        // Arrange
+        let cardId = "YOD_041"
+        stubGetCardDetail(id: cardId)
+
+        // Act
+        let result = await sut.fetchCardDetail(id: cardId)
+
+        // Assert
+        XCTAssertNotNil(result)
+        XCTAssertNotNil(result?.mechanics)
+        XCTAssertEqual(result?.name, "Eye of the Storm")
+    }
+
     // MARK: Private
 
     private let mock = CardsResponseMock()
@@ -47,13 +61,24 @@ final class CardAPIWorkerTests: XCTestCase {
 
 extension CardAPIWorkerTests {
     func stubGetCards() {
-        let fakeJSONResponse = mock.successResponse
+        let fakeJSONResponse = mock.successCardsResponse
 
         stubRequest.stubJSONResponse(
             jsonObject: fakeJSONResponse,
             header: nil,
             statusCode: 200,
             absoluteStringWord: "omgvamp-hearthstone-v1.p.rapidapi.com/cards"
+        )
+    }
+
+    func stubGetCardDetail(id: String) {
+        let fakeJSONResponse = mock.successCardDetailResponse
+
+        stubRequest.stubJSONResponse(
+            jsonObject: fakeJSONResponse,
+            header: nil,
+            statusCode: 200,
+            absoluteStringWord: "omgvamp-hearthstone-v1.p.rapidapi.com/cards/\(id)"
         )
     }
 }
